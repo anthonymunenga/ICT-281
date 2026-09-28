@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Munenga - Cyber Security Student Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- HEADER: page title and student info -->
+    <header>
+        <h1>Mulungushi University - School of Engineering and Technology</h1>
+        <p>Anthony Munenga | Student ID: 202509971 | Programme: Cyber Security</p>
+    </header>
+
+    <!-- NAV: links to every section on this same page (id must match href) -->
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#hobbies">My Hobbies</a>
+        <a href="#learning-plan">My Learning Plan</a>
+        <a href="#photos">My Photos</a>
+        <a href="#media">My Media</a>
+        <a href="#contact">Contact</a>
+
+    <main>
+
+        <!-- ABOUT ME -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>
+                My name is Anthony Munenga, and I am a second-year student pursuing a
+                Bachelor of Science in Cyber Security at Mulungushi University, in the
+                School of Engineering and Technology. I am passionate about technology,
+                problem solving, and understanding how systems can be protected from
+                threats. Outside of my studies, I enjoy music, playing the trumpet, and
+                spending time on the soccer field. Through this course, I am learning
+                how websites are built from the ground up using HTML, CSS, and eventually
+                JavaScript, which I see as a valuable skill alongside my cyber security
+                training, since understanding how the web works helps me understand how
+                it can be secured.
+            </p>
+        </section>
+
+        <!-- HOBBIES -->
+        <section id="hobbies" class="content-section">
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Listening to music</li>
+                <li>Playing the trumpet</li>
+                <li>Learning programming</li>
+                <li>Playing soccer</li>
+            </ul>
+        </section>
+
+        <!-- LEARNING PLAN: ordered steps + a real data table -->
+        <section id="learning-plan" class="content-section">
+            <h2>My Learning Plan</h2>
+
+            <h3>Steps to improve my web skills</h3>
+            <ol>
+                <li>Practice building small HTML/CSS projects every week.</li>
+                <li>Complete the freeCodeCamp Responsive Web Design course.</li>
+                <li>Start learning JavaScript to make my pages interactive.</li>
+            </ol>
+
+            <h3>Weekly Study Table</h3>
+            <table>
+                <caption>My weekly web learning schedule</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Practice Task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>HTML structure</td>
+                        <td>Rebuild this page's sections from memory</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>CSS layout</td>
+                        <td>Style a photo gallery with flexbox</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>Forms and accessibility</td>
+                        <td>Build a contact form with labels and validation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- PHOTOS: at least 3 images with alt text and captions -->
+        <section id="photos" class="content-section">
+            <h2>My Photo Gallery</h2>
+            <p>Here are some pictures from my profile.</p>
+            <div class="gallery">
+                <figure>
+                    <img src="images/20260330_225719.jpg" alt="Anthony smiling at the camera">
+                    <figcaption>My first picture</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/20260919_132621.jpg" alt="Anthony standing outdoors">
+                    <figcaption>My second picture</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/IMG-20260714-WA0173.jpg" alt="Anthony at a university event">
+                    <figcaption>My third picture</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- MEDIA: short intro video + audio clip -->
+        <section id="media" class="content-section">
+            <h2>My Media</h2>
+
+            <h3>Introduction Video</h3>
+            <video controls width="500">
+                <source src="videos/lv_0_20260928094824.mp4 " type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p><strong>Video summary (for accessibility):</strong> In this short clip I say
+            my name, mention that I am studying Cyber Security at Mulungushi University,
+            and share that the web skill I hope to learn is building secure, responsive
+            websites.</p>
+
+            <h3>Audio Clip</h3>
+            <audio controls>
+                <source src="videos/audio.m4a " type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+            <p>This recording describes why I am studying web technologies alongside
+            cyber security, and how the two subjects connect.</p>
+        </section>
+
+        <!-- CONTACT FORM: local demo only, action="#" -->
+        <section id="contact" class="content-section">
+            <h2>Contact</h2>
+            <p><em>Note: this form is a browser demonstration only. It does not actually send data anywhere.</em></p>
+            <form action="#">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">Topic:</label>
+                    <select id="topic" name="topic">
+                        <option value="general">General Inquiry</option>
+                        <option value="collaboration">Project Collaboration</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Anthony Munenga - ICT251 Web Technologies, Mulungushi University</p>
+    </footer>
+
+</body>
+</html>

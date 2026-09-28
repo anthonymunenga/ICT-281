@@ -1,0 +1,193 @@
+/* ===== Base page setup ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ===== Header (element + id could both work, using id for the one unique section) ===== */
+header {
+    background-color: #1f4e79;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+/* ===== Navigation ===== */
+nav {
+    background-color: #14344f;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 0.75rem;
+    font-weight: bold;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* Hover / focus state for links */
+nav a:hover,
+nav a:focus {
+    background-color: #3a7bd5;
+    outline: none;
+}
+
+/* ===== Main content sections (class selector, reused everywhere) ===== */
+.content-section {
+    background-color: white;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.content-section h2 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 5px;
+}
+
+/* id selector for one unique section, e.g. give Contact a distinct background */
+#contact {
+    background-color: #f1f6fa;
+}
+
+/* ===== Photo gallery ===== */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+figure {
+    margin: 0;
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+}
+
+figcaption {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* Images and video always fit the screen */
+img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 0.6rem;
+    text-align: left;
+}
+
+th {
+    background-color: #1f4e79;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f6f8;
+}
+
+/* ===== Form ===== */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #3a7bd5;
+    border-color: #3a7bd5;
+}
+
+button[type="submit"] {
+    background-color: #1f4e79;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: #3a7bd5;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #14344f;
+    color: white;
+}
+
+/* ===== Responsive: no horizontal scrolling on narrow screens ===== */
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 0.3rem;
+    }
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+}
