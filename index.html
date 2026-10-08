@@ -5,25 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony Munenga - Cyber Security Student Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:,">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- HEADER: page title and student info -->
-    <header>
-        <h1>Mulungushi University - School of Engineering and Technology</h1>
-        <p>Anthony Munenga | Student ID: 202509971 | Programme: Cyber Security</p>
+    <!-- HEADER: site identity -->s
+    <header class="site-header">
+        <h1>Anthony Munenga</h1>
+        <p class="tagline">Cyber Security Student | Mulungushi University</p>
     </header>
 
-    <!-- NAV: links to every section on this same page (id must match href) -->
-    <nav>
+    <!-- NAV: links to every main section (id must match href) -->
+    <nav class="site-nav" aria-label="Main navigation">
         <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
         <a href="#hobbies">My Hobbies</a>
         <a href="#learning-plan">My Learning Plan</a>
         <a href="#photos">My Photos</a>
         <a href="#media">My Media</a>
         <a href="#contact">Contact</a>
+    </nav>
 
     <main>
+
+        <!-- HERO: name, programme, intro, clear call to action -->
+        <section class="hero" id="welcome">
+            <h2>Welcome to my portfolio</h2>
+            <p class="hero-intro">
+                I am a second-year Bachelor of Science in Cyber Security student at
+                Mulungushi University. This site shows what I have learned in ICT251
+                about building a structured, responsive and interactive website.
+            </p>
+            <a class="btn" href="#projects">View My Projects</a>
+        </section>
 
         <!-- ABOUT ME -->
         <section id="about" class="content-section">
@@ -40,6 +55,38 @@
                 training, since understanding how the web works helps me understand how
                 it can be secured.
             </p>
+        </section>
+
+        <!-- PROJECTS / SKILLS: at least three examples, filterable -->
+        <section id="projects" class="content-section">
+            <h2>Projects and Skills</h2>
+            <p>Three things I have learned and built during ICT251.</p>
+
+            <!-- FEATURE: project search / filter -->
+            <div class="filter-bar">
+                <label for="project-search">Filter projects:</label>
+                <input type="text" id="project-search" placeholder="Type a keyword, e.g. CSS">
+                <button type="button" id="project-reset" class="btn btn-secondary">Reset</button>
+            </div>
+            <p id="filter-status" class="filter-status" role="status"></p>
+
+            <div class="project-grid" id="project-grid">
+                <article class="project-card" data-keywords="html structure semantics">
+                    <h3>Semantic HTML5 Structure</h3>
+                    <p>I rebuilt my portfolio using header, nav, main, section and footer
+                    so that the page has a clear outline and works well with screen readers.</p>
+                </article>
+                <article class="project-card" data-keywords="css flexbox responsive layout">
+                    <h3>Responsive CSS Layout</h3>
+                    <p>I used external CSS, the box model and a media query to make the
+                    site readable at both phone and desktop widths.</p>
+                </article>
+                <article class="project-card" data-keywords="javascript form validation dom">
+                    <h3>JavaScript Form Validation</h3>
+                    <p>I validated a contact form in the browser, showing feedback near
+                    each field and a local preview instead of sending data anywhere.</p>
+                </article>
+            </div>
         </section>
 
         <!-- HOBBIES -->
@@ -92,12 +139,41 @@
                     </tr>
                 </tbody>
             </table>
+
+            <!-- FEATURE: study hours calculator -->
+            <h3>Study Hours Calculator</h3>
+            <p>Estimate how many hours you plan to study each week.</p>
+            <div class="calculator">
+                <div class="calc-field">
+                    <label for="hours-per-day">Planned hours per day</label>
+                    <input type="number" id="hours-per-day" min="0" step="0.5" placeholder="e.g. 2">
+                </div>
+                <div class="calc-field">
+                    <label for="days-per-week">Days per week (1-7)</label>
+                    <input type="number" id="days-per-week" min="1" max="7" placeholder="e.g. 5">
+                </div>
+                <button type="button" id="calc-button" class="btn">Calculate</button>
+            </div>
+            <p id="calc-result" class="calc-result" role="status"></p>
         </section>
 
-        <!-- PHOTOS: at least 3 images with alt text and captions -->
+        <!-- PHOTOS: gallery viewer with Previous / Next -->
         <section id="photos" class="content-section">
             <h2>My Photo Gallery</h2>
             <p>Here are some pictures from my profile.</p>
+
+            <!-- FEATURE: gallery viewer -->
+            <figure class="gallery-viewer">
+                <img id="viewer-image" src="images/20260330_225719.jpg"
+                     alt="Anthony smiling at the camera">
+                <figcaption id="viewer-caption">My first picture</figcaption>
+            </figure>
+            <div class="viewer-controls">
+                <button type="button" id="prev-photo" class="btn btn-secondary">Previous</button>
+                <span id="viewer-counter" class="viewer-counter">1 of 3</span>
+                <button type="button" id="next-photo" class="btn btn-secondary">Next</button>
+            </div>
+
             <div class="gallery">
                 <figure>
                     <img src="images/20260330_225719.jpg" alt="Anthony smiling at the camera">
@@ -120,7 +196,7 @@
 
             <h3>Introduction Video</h3>
             <video controls width="500">
-                <source src="videos/lv_0_20260928094824.mp4 " type="video/mp4">
+                <source src="videos/lv_0_20260928094824.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <p><strong>Video summary (for accessibility):</strong> In this short clip I say
@@ -130,51 +206,58 @@
 
             <h3>Audio Clip</h3>
             <audio controls>
-                <source src="videos/audio.m4a " type="audio/mpeg">
+                <source src="videos/audio.m4a" type="audio/mp4">
                 Your browser does not support the audio tag.
             </audio>
             <p>This recording describes why I am studying web technologies alongside
             cyber security, and how the two subjects connect.</p>
         </section>
 
-        <!-- CONTACT FORM: local demo only, action="#" -->
+        <!-- CONTACT FORM: validation + local preview, no data is sent -->
         <section id="contact" class="content-section">
             <h2>Contact</h2>
-            <p><em>Note: this form is a browser demonstration only. It does not actually send data anywhere.</em></p>
-            <form action="#">
+            <p><em>Browser demonstration only — no message is sent.</em></p>
+            <form id="contact-form" action="#" novalidate>
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
+                    <p class="field-error" id="name-error"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
+                    <p class="field-error" id="email-error"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="topic">Topic:</label>
                     <select id="topic" name="topic">
-                        <option value="general">General Inquiry</option>
-                        <option value="collaboration">Project Collaboration</option>
-                        <option value="feedback">Feedback</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Project Collaboration">Project Collaboration</option>
+                        <option value="Feedback">Feedback</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
+                    <p class="field-error" id="message-error"></p>
                 </div>
 
-                <button type="submit">Send Message</button>
+                <button type="submit" class="btn">Send Message</button>
             </form>
+
+            <!-- Preview is filled in by JavaScript when the form is valid -->
+            <div id="form-preview" class="form-preview" hidden></div>
         </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Anthony Munenga - ICT251 Web Technologies, Mulungushi University</p>
+        <p><a href="[github.com](https://github.com/YOUR-USERNAME/YOUR-REPO)" target="_blank" rel="noopener">View Source on GitHub</a></p>
     </footer>
 
 </body>
